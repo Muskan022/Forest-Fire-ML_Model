@@ -1,27 +1,83 @@
+<!DOCTYPE html>
 <html>
+<head>
+    <style>
+        body {
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+        }
+
+        .login {
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0px 0px 10px #888888;
+        }
+
+        h1 {
+            color: #e60026;
+        }
+
+        form {
+            text-align: left;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            height: 20px;
+        }
+
+        button[type="submit"] {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        h2 {
+            margin-top: 20px;
+            color: #333;
+        }
+    </style>
+</head>
 <body>
     <div class="login">
-       <h1>FWI Prediction</h1>
-   
-        <!-- Main Input For Receiving Query to our ML -->
+       <h1>Fire Weather Index Prediction</h1>
+
+       <!-- Main Input For Receiving Query to our ML -->
        <form action="{{ url_for('predict_datapoint')}}" method="post">
-           <input type="text" name="month" placeholder="month" required="required" /><br>
-           <input type="text" name="Temperature" placeholder="Temperature" required="required" /><br>
-           <input type="text" name="RH" placeholder="RH" required="required" /><br>
-           <input type="text" name="Ws" placeholder="Ws" required="required" /><br>
-           <input type="text" name="Rain" placeholder="Rain" required="required" /><br>
-           <input type="text" name="FFMC" placeholder="FFMC" required="required" /><br>
-           <input type="text" name="DMC" placeholder="DMC" required="required" /><br>
-           <input type="text" name="ISI" placeholder="ISI" required="required" /><br>
-           <input type="text" name="Classes" placeholder="Classes" required="required" /><br>
-           <input type="text" name="Region" placeholder="Region" required="required" /><br>
-   
-   
-   
+         <input type="text" name="month" placeholder="month" required="required" /><br>
+         <input type="text" name="Temperature" placeholder="Temperature" required="required" /><br>
+         <input type="text" name="RH" placeholder="RH" required="required" /><br>
+         <input type="text" name="Ws" placeholder="Ws" required="required" /><br>
+         <input type="text" name="Rain" placeholder="Rain" required="required" /><br>
+         <input type="text" name="FFMC" placeholder="FFMC" required="required" /><br>
+         <input type="text" name="DMC" placeholder="DMC" required="required" /><br>
+         <input type="text" name="DC" placeholder="DC" required="required" /><br>
+         <input type="text" name="ISI" placeholder="ISI" required="required" /><br>
+         <input type="text" name="Classes" placeholder="Classes" required="required" /><br>
+         <input type="text" name="Region" placeholder="Region" required="required" /><br>
+
            <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
        </form>
-    <h2>
-       THE FWI prediction is {{result}}
-    </h2>
-   <body>
+
+       <h2>
+           THE FWI prediction is {{result}}
+       </h2>
+   </div>
+</body>
 </html>
